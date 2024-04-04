@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/style1.css">
+</head>
+
+<body>
+    <header> 
+  
+        <div class="logosec"> 
+            <div class="logo">WelCome</div>  
+        </div> 
+        {% comment %} <div class="searchbar">
+            <input type="text" placeholder="Search">
+                <div class="search-icon">
+                    <img src="/static/images/logo.jpeg" alt="Logo">
+                </div>
+        </div>
+        <div class="message"> 
+            <div class="dp"> 
+              <img src= "/static/images/user.jpeg"
+                    class="dpicn" 
+                    alt="dp"> 
+              </div> 
+        </div>  {% endcomment %}
+    </header>
+    <main>
+        <div class="main-container">
+            <div class="navcontainer">
+                <div class="nav">
+                    <div class="nav-upper-options">
+                        <div class="nav-option option1">
+
+                            <a href="{% url 'user_data' %}" class="btn" style=" text-decoration: none; font-weight: bold; color: black; ">Profile</a>
+                        </div>
+                        <div class="nav-option option2">
+
+                            <a href="{% url 'lunch' %}" class="btn" style=" text-decoration: none; font-weight: bold; color: black; ">Lunch</a>
+                        </div>
+                        {% comment %} <div class="nav-option option3">
+
+                            <h4>Meal Feedback</h4>
+                        </div> {% endcomment %}
+                        <div class="nav-option option4">
+                            <a href="{% url 'menu' %}" class="btn" style=" text-decoration: none; font-weight: bold; color: black; ">Menu</a>
+                        </div>
+                        {% comment %} <div class="nav-option option5">
+
+                            <h4>Order History</h4>
+                        </div> {% endcomment %}
+                        <div class="nav-option option6">
+                            <a href="{% url 'logout' %}" class="btn" style=" text-decoration: none; font-weight: bold; color: black; ">Logout</a>
+                            {% comment %} <h4>Logout </h4> {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

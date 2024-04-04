@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="item-corner">
+        <h2 style=" margin-left: 88px; margin-top: 10px;">Breakfast</h2>
+            <form action="{% url 'breakfast_amt' %}" method="post">
+                {% csrf_token %}
+                <div class="Breakfast" style="display: flex;
+                flex-direction: column;
+                align-items: center";>
+                    <div class ="item Poha" style="margin: 10px;">
+                        <img  width ="123px" src="/static/images/poha.jpg" alt="">
+                        <h4>Poha</h4>
+                        <p>For ₹15/- Only</p>
+                        <input type="checkbox" name="item" value="Poha" style="margin-left: 129px;">
+                        <input type="hidden" name="Poha_price" value="15">
+                    </div>
+                    <div class ="item Idli" style="margin: 10px;">
+                        <img width="123px" src="/static/images/idli.png" alt="">
+                        <p><h4>Idli</h4></p>
+                        <p>For ₹15/- Only</p>
+                        <input type="checkbox" name="item" value="Idli" style="margin-left: 129px;">
+                        <input type="hidden" name="Idli_price" value="15">
+                    </div>
+                    <div class ="item Idli" style="margin: 10px;">
+                        <img width="123px"src="/static/images/Upma.png" alt="">
+                        <p><h4>Upma</h4></p>
+                        <p>For ₹15/- Only</p>
+                        <input type="checkbox" name="item"  value="Upma" style="margin-left: 129px;">
+                        <input type="hidden" name="Upma_price" value="15">
+                    </div>
+                
+                    {% comment %} <div class ="item Chai" style="margin: 10px;">
+                        <img width="123px"src="/static/images/chai.jpg" alt="">
+                        <p><h4>Chai</h4></p>
+                        <p>For ₹12/- Only</p>
+                        <input type="checkbox" name="item"  value="Chai" style="margin-left: 129px;">
+                        <input type="hidden" name="Chai_price" value="12">
+                    </div> {% endcomment %}
+                    <div class ="item Coffee" style="margin: 10px;">
+                        <img width="123px"src="/static/images/coffee.jpg" alt="">
+                        <p><h4>Coffee</h4></p>
+                        <p>For ₹20/- Only</p>
+                        <input type="checkbox" name="item"  value="Coffee" style="margin-left: 129px;">
+                        <input type="hidden" name="Coffee_price" value="20">
+                    </div>
+                    <div class ="item Milk" style="margin: 10px;">
+                        <img width="123px"src="/static/images/milk.jpg" alt="">
+                        <p><h4>Milk</h4></p>
+                        <p>For ₹17/- Only</p>
+                        <input type="checkbox" name="item" value="Milk" style="margin-left: 129px;">
+                        <input type="hidden" name="Milk_price" value="17">
+                    </div>
+                
+                <!-- <div class ="item Mft">Mft</div> -->
+                    <div class ="item Omelette" style="margin: 10px;">
+                        <img width="123px"src="/static/images/Omelette.jpg" alt="">
+                        <p><h4>Omelette</h4></p>
+                        <p>For ₹25/- Only</p>
+                        <input type="checkbox" name="item" value="Omelette" style="margin-left: 129px;">
+                        <input type="hidden" name="Omelette_price" value="25">
+                    </div>
+                </div>
+                <button type="submit" style="margin-left: 88px;
+                                                padding: 12px;
+                                                background: lightblue;
+                                                border: none;
+                                                border-radius: 12px;"
+                        >Calculate Total</button>
+            </form>
+            <!-- <div class ="Poha"></div>
+            <div class ="Poha"></div> -->      
+    </div>
+</body>
+</html>

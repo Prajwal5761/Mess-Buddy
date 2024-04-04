@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa; /* Changed background color */
+        }
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            color: #333;
+            text-transform: uppercase; /* Converted to uppercase */
+            letter-spacing: 2px; /* Added letter spacing */
+        }
+        table {
+            width: 80%; /* Changed width */
+            max-width: 800px; /* Added max-width */
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Improved box shadow */
+        }
+        th, td {
+            padding: 12px 15px; /* Increased padding */
+            border: 1px solid #dee2e6; /* Changed border color */
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+            color: #333;
+            text-align: left;
+            text-transform: capitalize; /* Converted to capitalize */
+        }
+        tr:nth-child(even) {
+            background-color: #f8f9fa; /* Changed even row background color */
+        }
+        .total-row {
+            font-weight: bold;
+            background-color: #e9ecef; /* Changed total row background color */
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Profile List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Breakfast Amount</th>
+                <th>Plates</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for profile in profiles %}
+                <tr>
+                    <td>{{ profile.user.username }}</td>
+                    <td>{{ profile.breakfast_amt }}</td>
+                    <td>{{ profile.plates }}</td>
+                </tr>
+            {% endfor %}
+            <tr class="total-row">
+                <td><strong>Total</strong></td>
+                <td>{{ total_breakfast_amt }}</td>
+                <td>{{ total_plates }}</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

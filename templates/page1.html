@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Input Page</title>
+    <style>
+        /* Add some styling if you want */
+    </style>
+</head>
+<body>
+    <h1>Enter Rate Per Plate and Service Charges</h1>
+    <form method="post" action="{% url 'total_bill' %}">
+        {% csrf_token %}
+        <label for="rate_per_plate">Rate Per Plate:</label>
+        <input type="number" id="rate_per_plate" name="rate_per_plate" value="0"><br><br>
+        <label for="service_charges">Service Charges:</label>
+        <input type="number" id="service_charges" name="service_charges" value="0"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

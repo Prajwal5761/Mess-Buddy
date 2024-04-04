@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .total-row {
+            background-color: #f9f9f9;
+            font-weight: bold;
+        }
+        .total-row td {
+            border-top: 2px solid #333;
+        }
+        .highlight {
+            background-color: #ffff99;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Profile List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Breakfast Amount</th>
+                <th>Plates</th>
+                <th>Rate Per Plate</th>
+                <th>Service Charges</th>
+                <th>Final Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for profile in profiles %}
+                <tr>
+                    <td>{{ profile.user.username }}</td>
+                    <td>{{ profile.breakfast_amt }}</td>
+                    <td>{{ profile.plates }}</td>
+                    <td>{{ rate_per_plate }}</td>
+                    <td>{{ service_charges }}</td>
+                    <td>
+                        {{ profile.lunch_amt|add:profile.breakfast_amt|add:service_charges }}
+                    </td>
+                </tr>
+            {% endfor %}
+            <tr class="total-row">
+                <td><strong>Total Final Amount</strong></td>
+                <td colspan="4"></td>
+                {% comment %} <td><strong>{{ service_charges|mul:profiles|length }}</strong></td> {% endcomment %}
+                <td><strong>{{ total_final_amount }}</strong></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunch</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .item-corner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .lunch, .Dinner {
+            margin: 0 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .items {
+            margin-bottom: 10px;
+        }
+        .items h4 {
+            margin: 0;
+        }
+        .submit {
+            text-align: center;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="item-corner">
+        <div class="lunch">
+            <h2>Lunch</h2>
+            <form action="{% url 'total_plates' %}" method="post">
+                {% csrf_token %}
+                <div class="items">
+                    <h4>Weekdays</h4>
+                    {% if selected_item == 'Weekdays-lunch' %}
+                        <input type="checkbox" name="item" value="Weekdays-lunch" checked>
+                    {% else %}
+                        <input type="checkbox" name="item" value="Weekdays-lunch">
+                    {% endif %}
+                </div>
+                <div class="items">
+                    <h4>WeekEnd</h4>
+                    {% if selected_item == 'WeekEnd-lunch' %}
+                        <input type="checkbox" name="item" value="WeekEnd-lunch" checked>
+                    {% else %}
+                        <input type="checkbox" name="item" value="WeekEnd-lunch">
+                    {% endif %}
+                </div>
+                <div class="submit">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+
+        <div class="Dinner">
+            <h2>Dinner</h2>
+            <form action="{% url 'total_plates' %}" method="post">
+                {% csrf_token %}
+                <div class="items">
+                    <h4>Weekdays</h4>
+                    {% if selected_item == 'Weekdays-Dinner' %}
+                        <input type="checkbox" name="item" value="Weekdays-Dinner" checked>
+                    {% else %}
+                        <input type="checkbox" name="item" value="Weekdays-Dinner">
+                    {% endif %}
+                </div>
+                <div class="items">
+                    <h4>WeekEnd</h4>
+                    {% if selected_item == 'WeekEnd-Dinner' %}
+                        <input type="checkbox" name="item" value="WeekEnd-Dinner" checked>
+                    {% else %}
+                        <input type="checkbox" name="item" value="WeekEnd-Dinner">
+                    {% endif %}
+                </div>
+                <div class="submit">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

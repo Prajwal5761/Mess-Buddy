@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        .main {
+            border-radius: 15px;
+        }
+        .heading p,
+        .address {
+            font-size: 1.1rem;
+            width: 35vw;
+            line-height: 28px;
+        }
+        .data {
+            display: flex;
+            flex-direction: column;
+            color: white;
+        }
+
+        .data input,
+        .data textarea {
+            /* width: 35vw; */
+            min-width: 35vw;
+            max-width: 35vw;
+            font-size: 1.1rem;
+            overflow: hidden;
+            background-color: transparent;
+            border: 0;
+            border-bottom: 1px solid white;
+            margin: 17px;
+        }
+
+        .data input:focus,
+        .data textarea:focus {
+            border-color: cyan;
+            outline: none;
+        }
+
+        .data button {
+            background-color: transparent;
+            font-size: 1.1rem;
+            padding: 14px;
+            border: 1px solid white;
+            border-radius: 10px;
+            margin: 15px;
+        }
+
+       .data button:hover {
+            cursor: pointer;
+            color: black;
+            border: 0;
+            background-color: cyan;
+            box-shadow: 2px 2px 30px #63d4d4a6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2 class="logo">Logo</h2>
+        <nav class="navigation">
+            <a href="{% url 'signup' %}" id="homelink">Home</a>
+            <a href="{% url 'about' %}" id="aboutlink">About</a>
+            <a href="{% url 'contact' %}" id="contactlink">Contact Us</a>
+            <button class="btnlogin-popup">Login</button>
+        </nav>
+    </header>
+    <div class="main">
+        <form
+            action="#" method="POST" class="contact-form" name="contact-form" style="margin-top: 76px;">
+            <div class="heading">
+                <h3 style="margin-left: 14px;"><i class="fa fa-1.5x fa-comments" style="color: cyan;"></i>Contact Us</h3>
+            </div>
+            <div class="data">
+                <input type="text" class="textInput" placeholder="Name" name="Name" required autocomplete="off"/>
+                <input type="email" id="inputEmail" placeholder="Email" name="Email" required autocomplete="off"/>
+                <textarea class="input textInput" type="text" placeholder="Message" name="Message" required></textarea>
+                <button type="submit" class="textInput" value="submit" id="submit">SUBMIT</button>
+                
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+
+    
+</body>
+</html>
