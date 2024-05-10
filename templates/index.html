@@ -6,10 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mess Mangnement System</title>
     <link rel="stylesheet" href="/static/style.css">
+    <style>
+        body {
+          margin: 0;
+          padding: 0;
+          font-family: Arial, sans-serif;
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+          transition: background-image 1s ease-in-out;
+        }
+        
+        #overlay {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: white;
+          text-align: center;
+        }
+      </style>
 </head>
 
 <body>
-    <header>
+    <header style="background: #fa9d21;">
         <h2 class="logo">Mess Buddy</h2>
         <nav class="navigation">
             <a href="{% url 'signup' %}" id="homelink">Home</a>
@@ -19,6 +43,11 @@
             <button class="btnlogin-popup">Login</button>
         </nav>
     </header>
+    
+    <div id="overlay">
+        <h1>Welcome to,<b>Mess Buddy</b></h1>
+        <p>Elegance on Every Plate.......</p>
+    </div>
     <div class="wrapper">
         <span class="icon-close"><ion-icon name="close"></ion-icon></span>
         <div class="form-box login">
@@ -75,10 +104,24 @@
             </form>
         </div>
     </div>
-
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="/static/script.js"></script>
+    <script>
+        const images = ['/static/images/image4.jpg', '/static/images/image5.jpg', '/static/images/image6.jpg']; // List of image paths
+        let currentIndex = 0;
+      
+        function changeBackground() {
+          document.body.style.backgroundImage = `url(${images[currentIndex]})`;
+          currentIndex = (currentIndex + 1) % images.length;
+        }
+      
+        // Change background every 5 seconds
+        setInterval(changeBackground, 5000);
+      
+        // Initial background change
+        changeBackground();
+      </script>
 </body>
 
 </html>

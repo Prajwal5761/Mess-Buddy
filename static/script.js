@@ -32,6 +32,8 @@ function handleaboutClick(){
 }
 aboutLink.addEventListener("click",handleaboutClick);
 
+
+
 function Auth() {
     var username = document.getElementById("mail");
     var Password = document.getElementById("password");
