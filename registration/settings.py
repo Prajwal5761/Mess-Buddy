@@ -33,6 +33,8 @@ SESSION_COOKIE_AGE = 60 * 60 * 24
 
 # Application definition
 
+
+# Added app1 for integrating its functions into project...
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
