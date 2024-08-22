@@ -7,6 +7,8 @@ from django.db.models import Sum
 
 # Create your views here.
 
+# Added a  Comment
+#For this following function login is required...
 @login_required
 def DashPage(request):
     return render (request, 'dashboard.html')
